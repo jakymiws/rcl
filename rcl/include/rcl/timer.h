@@ -326,6 +326,8 @@ RCL_WARN_UNUSED
 rcl_ret_t
 rcl_timer_get_time_until_next_call(const rcl_timer_t * timer, int64_t * time_until_next_call);
 
+RCL_PUBLIC
+RCL_WARN_UNUSED
 rcl_ret_t
 rcl_timer_get_next_call_time(const rcl_timer_t * timer, rcl_time_point_value_t * time_point_value);
 
