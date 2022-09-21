@@ -536,6 +536,18 @@ rcl_get_disable_loaned_message(bool * disable_loaned_message)
   *disable_loaned_message = (strcmp(env_val, "1") == 0);
   return RCL_RET_OK;
 }
+
+rcl_ret_t
+rcl_notify_participant_dynamic_network_interface(rcl_node_t * node)
+{
+  if(!rcl_node_is_valid(node))
+  {
+    RCL_SET_ERROR_MSG("NODE NOT VALID!");
+    return RCL_RET_NODE_INVALID;
+  }
+  return rmw_notify_participant_dynamic_network_interface(node->impl->rmw_node_handle);
+}
+
 #ifdef __cplusplus
 }
 #endif
