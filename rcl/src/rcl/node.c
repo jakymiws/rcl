@@ -538,14 +538,14 @@ rcl_get_disable_loaned_message(bool * disable_loaned_message)
 }
 
 rcl_ret_t
-rcl_notify_participant_dynamic_network_interface(rcl_node_t * node)
+rcl_notify_participant_dynamic_network_interface(rcl_context_t * context)
 {
-  if(!rcl_node_is_valid(node))
+  if(!rcl_context_is_valid(context)
   {
-    RCL_SET_ERROR_MSG("NODE NOT VALID!");
+    RCL_SET_ERROR_MSG("RCL CONTEXT NOT VALID!");
     return RCL_RET_NODE_INVALID;
   }
-  return rmw_notify_participant_dynamic_network_interface(node->impl->rmw_node_handle);
+  return rmw_notify_participant_dynamic_network_interface(context->impl->rmw_context);
 }
 
 #ifdef __cplusplus
