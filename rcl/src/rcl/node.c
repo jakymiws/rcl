@@ -540,7 +540,7 @@ rcl_get_disable_loaned_message(bool * disable_loaned_message)
 rcl_ret_t
 rcl_notify_participant_dynamic_network_interface(rcl_context_t * context)
 {
-  if(!rcl_context_is_valid(context)
+  if(!rcl_context_is_valid(context))
   {
     RCL_SET_ERROR_MSG("RCL CONTEXT NOT VALID!");
     return RCL_RET_NODE_INVALID;
