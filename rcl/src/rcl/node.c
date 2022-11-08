@@ -545,7 +545,7 @@ rcl_notify_participant_dynamic_network_interface(rcl_context_t * context)
     RCL_SET_ERROR_MSG("RCL CONTEXT NOT VALID!");
     return RCL_RET_NODE_INVALID;
   }
-  return rmw_notify_participant_dynamic_network_interface(context->impl->rmw_context);
+  return rmw_notify_participant_dynamic_network_interface(&(context->impl->rmw_context));
 }
 
 #ifdef __cplusplus
